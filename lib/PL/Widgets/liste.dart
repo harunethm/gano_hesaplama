@@ -25,9 +25,22 @@ class ListeState extends State<Liste> {
   //   return str;
   // }
 
+  late ScrollController controller;
+  @override
+  void initState() {
+    controller = ScrollController(
+      keepScrollOffset: true,
+      initialScrollOffset: 0,
+    );
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Scrollbar(
+      controller: controller,
+      radius: Radius.circular(24),
+      trackVisibility: false,
       child: Data.eklenenDersler.isNotEmpty
           ? ListView.builder(
               itemCount: Data.eklenenDersler.length,
