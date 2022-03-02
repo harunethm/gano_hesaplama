@@ -13,10 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'GANO Hesapla',
-      theme: ThemeData(
-        primarySwatch: Colors.purple,
-        fontFamily: "QuickSand"
-      ),
+      theme: ThemeData(primarySwatch: Colors.purple, fontFamily: "QuickSand"),
       home: HomePage(),
     );
   }

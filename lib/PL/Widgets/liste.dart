@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gano_hesaplama/BLL/bll_data.dart';
 import 'package:gano_hesaplama/DAL/data.dart';
 import 'package:gano_hesaplama/PL/Widgets/bilgi.dart';
 import 'package:gano_hesaplama/PL/const.dart';
@@ -46,6 +47,7 @@ class ListeState extends State<Liste> {
               itemCount: Data.eklenenDersler.length,
               itemBuilder: (context, index) {
                 String _dersAdi = Data.eklenenDersler[index].not.key.toString();
+                int i = index;
                 // return Card(
                 //   margin: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 //   shape:
@@ -104,6 +106,9 @@ class ListeState extends State<Liste> {
                         child: OutlinedButton(
                           onPressed: () {
                             Slidable.of(context)?.close();
+                            BllData.dersSil(i);
+                            setState(() {});
+                            widget.keyBilgi.currentState!.setState(() {});
                           },
                           style: OutlinedButton.styleFrom(
                             backgroundColor: Const.appSecColor,

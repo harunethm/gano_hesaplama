@@ -62,6 +62,7 @@ class HomePage extends StatelessWidget {
               onPressed: () {
                 BllData.dersleriSifirla();
                 keyListe.currentState!.setState(() {});
+                keyBilgi.currentState!.setState(() {});
               },
               color: Const.appMainColor,
               disabledColor: Const.appSecColor,
